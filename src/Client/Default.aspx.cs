@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Configuration;
 using System.Runtime.Remoting;
 using System.Runtime.Remoting.Channels;
 using System.Runtime.Remoting.Channels.Ipc;
@@ -13,8 +14,8 @@ namespace Client
 {
 	public partial class _Default : Page
 	{
-		private const string ServiceUrlTCP = "tcp://vbonev.david.local:3331/Service";
-		private const string ServiceUrlIPC = "ipc://TEST/Service";
+		private static string ServiceUrlTCP => ConfigurationManager.AppSettings["TCP"];
+		private static string ServiceUrlIPC => ConfigurationManager.AppSettings["IPC"];
 
 		public string ServerThreadIdentityTCP { get; set; }
 
@@ -41,9 +42,9 @@ namespace Client
 				ServerThreadIdentityTCP = service.GetThreadIdentity();
 				ServerWindowsIdentityTCP = service.GetWindowsIdentity(false);
 			}
-			catch
+			catch (Exception ex)
 			{
-				ServerThreadIdentityTCP = "Error";
+				ServerThreadIdentityTCP = $"Error: {ex}";
 				ServerWindowsIdentityTCP = "Error";
 			}
 
