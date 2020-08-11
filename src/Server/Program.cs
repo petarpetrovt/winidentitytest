@@ -21,8 +21,18 @@ namespace Server
 		{
 			ConfigureRemotingServices();
 
-			RegisterTCPChannel(3331, true);
-			RegisterIPCChannel("TEST", true);
+			if (args.Length < 2)
+			{
+				throw new Exception($"Missing TCP and IPC ports.\n\nUse: Server.exe 3331 MyIPCPORT\n\n");
+			}
+
+			if (!int.TryParse(args[0], out int port))
+			{
+				throw new Exception($"Invalid TCP port `{args[0]}`.");
+			}
+
+			RegisterTCPChannel(port, true);
+			RegisterIPCChannel(args[1], true);
 
 			_service = new RemotingService();
 			_serviceRef = RemotingServices.Marshal(_service, ServicePath);

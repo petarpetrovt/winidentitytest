@@ -13,7 +13,7 @@ namespace Client
 {
 	public partial class _Default : Page
 	{
-		private const string ServiceUrlTCP = "tcp://localhost:3331/Service";
+		private const string ServiceUrlTCP = "tcp://vbonev.david.local:3331/Service";
 		private const string ServiceUrlIPC = "ipc://TEST/Service";
 
 		public string ServerThreadIdentityTCP { get; set; }
@@ -24,31 +24,71 @@ namespace Client
 
 		public string ServerWindowsIdentityIPC { get; set; }
 
+		public string ServerThreadIdentityTCPIM { get; set; }
+
+		public string ServerWindowsIdentityTCPIM { get; set; }
+
+		public string ServerThreadIdentityIPCIM { get; set; }
+
+		public string ServerWindowsIdentityIPCIM { get; set; }
+
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			IService service = GetServiceTCP();
+			try
+			{
+				IService service = GetServiceTCP();
 
-			ServerThreadIdentityTCP = service.GetThreadIdentity();
-			ServerWindowsIdentityTCP = service.GetWindowsIdentity(false);
+				ServerThreadIdentityTCP = service.GetThreadIdentity();
+				ServerWindowsIdentityTCP = service.GetWindowsIdentity(false);
+			}
+			catch
+			{
+				ServerThreadIdentityTCP = "Error";
+				ServerWindowsIdentityTCP = "Error";
+			}
 
-			service = GetServiceIPC();
+			try
+			{
+				IService service = GetServiceIPC();
 
-			ServerThreadIdentityIPC = service.GetThreadIdentity();
-			ServerWindowsIdentityIPC = service.GetWindowsIdentity(false);
+				ServerThreadIdentityIPC = service.GetThreadIdentity();
+				ServerWindowsIdentityIPC = service.GetWindowsIdentity(false);
+			}
+			catch
+			{
+				ServerThreadIdentityIPC = "Error";
+				ServerWindowsIdentityIPC = "Error";
+			}
 
 			if (Thread.CurrentPrincipal.Identity is WindowsIdentity identity)
 			{
 				using (identity.Impersonate())
 				{
-					service = GetServiceTCP();
+					try
+					{
+						IService service = GetServiceTCP();
 
-					ServerThreadIdentityTCP = service.GetThreadIdentity();
-					ServerWindowsIdentityTCP = service.GetWindowsIdentity(false);
+						ServerThreadIdentityTCPIM = service.GetThreadIdentity();
+						ServerWindowsIdentityTCPIM = service.GetWindowsIdentity(false);
+					}
+					catch
+					{
+						ServerThreadIdentityTCPIM = "Error";
+						ServerWindowsIdentityTCPIM = "Error";
+					}
 
-					service = GetServiceIPC();
+					try
+					{
+						IService service = GetServiceIPC();
 
-					ServerThreadIdentityIPC = service.GetThreadIdentity();
-					ServerWindowsIdentityIPC = service.GetWindowsIdentity(false);
+						ServerThreadIdentityIPCIM = service.GetThreadIdentity();
+						ServerWindowsIdentityIPCIM = service.GetWindowsIdentity(false);
+					}
+					catch
+					{
+						ServerThreadIdentityIPCIM = "Error";
+						ServerWindowsIdentityIPCIM = "Error";
+					}
 				}
 			}
 		}

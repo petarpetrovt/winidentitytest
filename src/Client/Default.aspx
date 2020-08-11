@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 	<div class="row">
-		<div class="col-md-4">
+		<div class="col-md-6">
 			<br />
 			<strong>Current Thread Identity: </strong><%= System.Threading.Thread.CurrentPrincipal.Identity?.Name %>
 			<br />
@@ -10,14 +10,14 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-4">
+		<div class="col-md-6">
 			<br />
 			<strong>Server Thread Identity (TCP): </strong><%= ServerThreadIdentityTCP %>
 			<br />
 			<strong>Server Windows Identity (TCP): </strong><%= ServerWindowsIdentityTCP %>
 			<br />
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-6">
 			<br />
 			<strong>Server Thread Identity (IPC): </strong><%= ServerThreadIdentityIPC %>
 			<br />
@@ -26,21 +26,21 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-4">
+		<div class="col-md-6">
 			<br />
 			<strong>With impersonation</strong>
 			<br />
-			<strong>Server Thread Identity (TCP): </strong><%= ServerThreadIdentityTCP %>
+			<strong>Server Thread Identity (TCP): </strong><%= ServerThreadIdentityTCPIM %>
 			<br />
-			<strong>Server Windows Identity (TCP): </strong><%= ServerWindowsIdentityTCP %>
+			<strong>Server Windows Identity (TCP): </strong><%= ServerWindowsIdentityTCPIM %>
 			<br />
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-6">
 			<br />
 			<br />
-			<strong>Server Thread Identity (IPC): </strong><%= ServerThreadIdentityIPC %>
+			<strong>Server Thread Identity (IPC): </strong><%= ServerThreadIdentityIPCIM %>
 			<br />
-			<strong>Server Windows Identity (IPC): </strong><%= ServerWindowsIdentityIPC %>
+			<strong>Server Windows Identity (IPC): </strong><%= ServerWindowsIdentityIPCIM %>
 			<br />
 		</div>
 	</div>
