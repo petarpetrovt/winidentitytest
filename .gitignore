@@ -1,0 +1,16 @@
+.deploy/
+.nuget/
+packages/
+
+.vs/
+.vscode/
+
+src/**/bin/
+src/**/obj/
+src/**/*.user
+
+test/**/bin/
+test/**/obj/
+test/**/*.user
+
+*.suo

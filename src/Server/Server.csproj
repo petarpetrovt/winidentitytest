@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFrameworks>net48</TargetFrameworks>
+		<RootNamespace>Server</RootNamespace>
+		<AssemblyName>Server</AssemblyName>
+		<IsPackable>false</IsPackable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Reference Include="System.Configuration" />
+		<Reference Include="System.Configuration.Install" />
+		<Reference Include="System.ServiceProcess" />
+		<Reference Include="System.Runtime.Remoting" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Server.Common\Server.Common.csproj" />
+	</ItemGroup>
+
+</Project>
