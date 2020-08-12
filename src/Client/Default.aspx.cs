@@ -44,7 +44,7 @@ namespace Client
 			}
 			catch (Exception ex)
 			{
-				ServerThreadIdentityTCP = $"Error: {ex}";
+				ServerThreadIdentityTCP = $"Error";
 				ServerWindowsIdentityTCP = "Error";
 			}
 
