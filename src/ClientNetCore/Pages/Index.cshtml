@@ -1,0 +1,61 @@
+@page
+@model IndexModel
+@{
+	ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+	<h1 class="display-4">Welcome</h1>
+	<p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+		<br />
+		<strong>Current Thread Identity: </strong>@User.Identity?.Name
+		<br />
+		<strong>Current Windows Identity: </strong>@System.Security.Principal.WindowsIdentity.GetCurrent()?.Name
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-6">
+		<br />
+		<strong>Server Thread Identity (TCP): </strong>@Model.ServerThreadIdentityTCP
+		<br />
+		<strong>Server Windows Identity (TCP): </strong>@Model.ServerWindowsIdentityTCP
+		<br />
+	</div>
+	<div class="col-md-6">
+		<br />
+		<strong>Server Thread Identity (IPC): </strong>@Model.ServerThreadIdentityIPC
+		<br />
+		<strong>Server Windows Identity (IPC): </strong>@Model.ServerWindowsIdentityIPC
+		<br />
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-6">
+		<br />
+		<strong>With impersonation</strong>
+		<br />
+		<strong>Server Thread Identity (TCP): </strong>@Model.ServerThreadIdentityTCPIM
+		<br />
+		<strong>Server Windows Identity (TCP): </strong>@Model.ServerWindowsIdentityTCPIM
+		<br />
+	</div>
+	<div class="col-md-6">
+		<br />
+		<br />
+		<strong>Server Thread Identity (IPC): </strong>@Model.ServerThreadIdentityIPCIM
+		<br />
+		<strong>Server Windows Identity (IPC): </strong>@Model.ServerWindowsIdentityIPCIM
+		<br />
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-12">
+		<p>
+			@Model.Errors
+		</p>
+	</div>
+</div>

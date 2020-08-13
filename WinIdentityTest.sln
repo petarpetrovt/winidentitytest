@@ -18,6 +18,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server.Common", "src\Server
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "src\Client\Client.csproj", "{8CCC470E-CDBF-4647-BC31-6122B9A6E622}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientNetCore", "src\ClientNetCore\ClientNetCore.csproj", "{51226F60-A1E4-48CA-BB2C-849BCABC55DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,10 @@ Global
 		{8CCC470E-CDBF-4647-BC31-6122B9A6E622}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8CCC470E-CDBF-4647-BC31-6122B9A6E622}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8CCC470E-CDBF-4647-BC31-6122B9A6E622}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51226F60-A1E4-48CA-BB2C-849BCABC55DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51226F60-A1E4-48CA-BB2C-849BCABC55DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51226F60-A1E4-48CA-BB2C-849BCABC55DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51226F60-A1E4-48CA-BB2C-849BCABC55DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +50,7 @@ Global
 		{FF73710D-401C-4E94-B06F-FE24E0801E31} = {55D44A87-75AB-4ADB-99C3-7F92F2703766}
 		{56D4CC38-83D3-4D1B-A253-650D3F10A12A} = {55D44A87-75AB-4ADB-99C3-7F92F2703766}
 		{8CCC470E-CDBF-4647-BC31-6122B9A6E622} = {55D44A87-75AB-4ADB-99C3-7F92F2703766}
+		{51226F60-A1E4-48CA-BB2C-849BCABC55DB} = {55D44A87-75AB-4ADB-99C3-7F92F2703766}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E73DB68A-AAE2-4877-B7FE-B2A32F949CF3}
