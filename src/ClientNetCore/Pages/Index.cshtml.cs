@@ -69,10 +69,10 @@ namespace ClientNetCore.Pages
 
 			try
 			{
-				IService service = GetServiceIPC(ServiceUrlIPC);
+				//IService service = GetServiceIPC(ServiceUrlIPC);
 
-				ServerThreadIdentityIPC = service.GetThreadIdentity();
-				ServerWindowsIdentityIPC = service.GetWindowsIdentity(false);
+				//ServerThreadIdentityIPC = service.GetThreadIdentity();
+				//ServerWindowsIdentityIPC = service.GetWindowsIdentity(false);
 			}
 			catch (Exception ex)
 			{
@@ -105,10 +105,10 @@ namespace ClientNetCore.Pages
 
 					try
 					{
-						IService service = GetServiceIPC(ServiceUrlIPC);
+						//IService service = GetServiceIPC(ServiceUrlIPC);
 
-						ServerThreadIdentityIPCIM = service.GetThreadIdentity();
-						ServerWindowsIdentityIPCIM = service.GetWindowsIdentity(false);
+						//ServerThreadIdentityIPCIM = service.GetThreadIdentity();
+						//ServerWindowsIdentityIPCIM = service.GetWindowsIdentity(false);
 					}
 					catch (Exception ex)
 					{
